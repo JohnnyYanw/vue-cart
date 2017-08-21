@@ -1,5 +1,7 @@
 <template>
-	<router-view class="g-body"></router-view>
+	<div class="g-body">
+		<router-view></router-view>
+	</div>
 </template>
 
 <script>
@@ -9,19 +11,14 @@ export default {
 </script>
 
 <style>
-* {
-	margin: 0;
-	padding: 0;
-}
 html, body {
 	height: 100%;
 	font-size: 14px;
-	line-height: 100%;
+	color: #2c3e50;
 }
 .g-body {
-	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	/* 让字体更清晰 */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	color: #2c3e50;
 }
 </style>
