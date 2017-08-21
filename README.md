@@ -1,6 +1,6 @@
 # vue-cart
 
-> A Vue.js project
+> Shopping-cart by Vue.js
 
 ## Build Setup
 
