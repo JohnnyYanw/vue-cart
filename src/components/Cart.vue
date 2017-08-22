@@ -49,8 +49,8 @@
 								<div class="goods-form">
 									<div class="item-goods">
 										<div class="p-check">
-											<input type="checkbox" :id="item.productId">
-											<label :for="item.productId" :class="{'label-checked': item.checked}" @click="selectProduct(item)"></label>
+											<input type="checkbox" :id="'input-' + item.productId">
+											<label :for="'input-' + item.productId" :class="{'label-checked': item.checked}" @click="selectProduct(item)"></label>
 										</div>
 										<div class="p-goods">
 											<div class="goods-img">
@@ -62,7 +62,7 @@
 									<div class="item">{{item.productPrice | formatPrice}}</div>
 									<div class="item">
 										<div class="item-center">
-											<a href="javascript: void(0);" class="decrement" @click="changeQuantity(item, -1, $event)">-</a>
+											<a href="javascript: void(0);" class="decrement" @click="changeQuantity(item, -1)">-</a>
 											<input type="text" @keyup.enter="changeVal(item, $event)" :value="item.productQuantity">
 											<a href="javascript: void(0);" class="increment" @click="changeQuantity(item, 1)">+</a>
 										</div>
