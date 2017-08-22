@@ -63,7 +63,7 @@
 									<div class="item">
 										<div class="item-center">
 											<a href="javascript: void(0);" class="decrement" @click="changeQuantity(item, -1, $event)">-</a>
-											<input type="text" @keyup.enter="changeVal($event)" v-model="item.productQuantity">
+											<input type="text" @keyup.enter="changeVal(item, $event)" :value="item.productQuantity">
 											<a href="javascript: void(0);" class="increment" @click="changeQuantity(item, 1)">+</a>
 										</div>
 									</div>
@@ -159,10 +159,14 @@
 						item.productQuantity = 1;
 					}
 				}
+				this.calcTotalPrice();
 			},
-			changeVal(event) {
+			changeVal(item, event) {
 				console.log(event.target.value);
-				
+				item.productQuantity = event.target.value;
+				if(item.checked) {
+					this.calcTotalPrice();
+				}
 			},
 			selectProduct(item) {
 				if(typeof item.checked === 'undefined') {
@@ -203,6 +207,7 @@
 				this.productList.splice(this.index, 1);
 				this.maskShow = false;
 				this.modalShow = false;
+				this.calcTotalPrice();
 			},
 			delCancel() {
 				this.maskShow = false;
