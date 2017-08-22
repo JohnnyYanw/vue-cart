@@ -11,7 +11,7 @@ const routes = [
 		path: '/cart',
 		component: resolve => require(['../components/Cart.vue'], resolve)
 	}, {
-		path: '/cart',
+		path: '/address',
 		component: resolve => require(['../components/Address.vue'], resolve)
 	}
 ];

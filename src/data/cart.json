@@ -4,49 +4,31 @@
     "totalMoney":109,
     "list":[
       {
-        "productId":"600100002115",
-        "productName":"黄鹤楼香烟",
-        "productPrice":19,
+        "productId":"12314924904",
+        "productName":"金贝勒休闲裤男2017新款男士简约百搭长裤修身小脚直筒商务男裤子 MF919 宝蓝",
+        "productPrice":79,
         "productQuantity":1,
         "productImage":"static/img/goods-1.jpg",
-        "parts":[
-          {
-            "partsId":"10001",
-            "partsName":"打火机",
-            "imgSrc":"static/img/part-1.jpg"
-          }
-        ]
+        "parts":[]
       },
       {
-        "productId":"600100002120",
-        "productName":"加多宝",
-        "productPrice":8,
-        "productQuantity":5,
+        "productId":"11616720136",
+        "productName":"李宁女鞋运动鞋女夏秋季网面轻便舒适休闲鞋透气减震跑步鞋 新基础黑/基础白",
+        "productPrice":169,
+        "productQuantity":1,
         "productImage":"static/img/goods-2.jpg",
-        "parts":[
-          {
-            "partsId":"20001",
-            "partsName":"吸管",
-            "imgSrc":"static/img/part-2.jpg"
-          }
-        ]
+        "parts":[]
       },
       {
-        "productId":"600100002117",
-        "productName":"金装黄鹤楼",
-        "productPrice":25,
-        "productQuantity":2,
-        "productImage":"static/img/goods-1.jpg",
+        "productId":"10361138423",
+        "productName":"回力女鞋休闲运动鞋透气跑步鞋板鞋低帮平底网鞋学生旅游鞋网鞋女鞋 浅灰",
+        "productPrice":69,
+        "productQuantity":1,
+        "productImage":"static/img/goods-3.jpg",
         "parts":[
           {
-            "partsId":"10001",
-            "partsName":"打火机-1",
-            "imgSrc":"static/img/part-1.jpg"
-          },
-          {
-            "partsId":"10002",
-            "partsName":"打火机-2",
-            "imgSrc":"static/img/part-1.jpg"
+            "partsId":"12682515944",
+            "partsName":"短筒浅口船袜纯色袜子 颜色随机发1"
           }
         ]
       }
