@@ -144,7 +144,6 @@
 				this.$http.get('src/data/cart.json')
 					.then(res => {
 						this.productList = res.data.result.list;
-						console.log(this.productList);
 					})
 					.catch(err => {
 						console.log(error);
@@ -225,7 +224,8 @@
 			position: relative;
 			text-align: center;
 			line-height: 50px;
-			font-size: 20px;
+			margin: 20px auto;
+			font-size: 18px;
 			&::before {
 				position: absolute;
 				left: 0;
@@ -261,7 +261,7 @@
 					background: #666;
 					color: #FFF;
 					text-align: center;
-					font-size: 18px;
+					font-size: 16px;
 				}
 				.item-info {
 					width: 640px;
@@ -271,7 +271,7 @@
 					left: 0;
 					top: 0;
 					line-height: 54px;
-					font-size: 18px;
+					font-size: 16px;
 					color: #FFF;
 					margin-left: 20px;
 					.check-all {
@@ -284,11 +284,11 @@
 						&::before {
 							position: absolute;
 							left: 0;
-							top: 2px;
+							top: 1px;
 							display: block;
 							content: '';
-							width: 16px;
-							height: 16px;
+							width: 15px;
+							height: 15px;
 							border: solid 1px #FFF;
 							border-radius: 50%;
 							box-sizing: border-box;
