@@ -14,9 +14,6 @@
 				<div class="addr-opration" v-show="item.isDefault">默认地址</div>
 				<div class="addr-opration set-default" v-show="!item.isDefault" @click="setDefault(item.addressId)">设为默认</div>
 			</div>
-			<!-- <div class="address-list address-new">
-				
-			</div> -->
 			<div class="addr-more" v-if="addrList.length > initNum">
 				<a href="javascript: void(0);" class="more-btn" @click="showMoreAddr">
 					<span>{{showMore? '更多地址': '收起地址'}}</span>
