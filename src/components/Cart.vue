@@ -130,7 +130,7 @@
 		},
 		// 自定义局部过滤器
 		filters: {
-			// 商品单价格式的处理
+			// 商品单价格式的处理(保留一位小数)
 			formatPrice(val) {
 				return '¥' + val.toFixed(1);
 			}
@@ -142,6 +142,7 @@
 			})
 		},
 		methods: {
+			// 获取购物车商品信息
 			getProductData() {
 				this.$http.get('src/data/cart.json')
 					.then(res => {
@@ -151,6 +152,7 @@
 						console.log(error);
 					});
 			},
+			// 点击"+""-"改变商品数量
 			changeQuantity(item, type, event) {
 				if(type > 0) {
 					item.productQuantity++;
@@ -162,6 +164,7 @@
 				}
 				this.calcTotalPrice();
 			},
+			// 输入商品数量
 			changeVal(item, event) {
 				console.log(event.target.value);
 				item.productQuantity = event.target.value;
@@ -213,11 +216,13 @@
 					}
 				});
 			},
+			// 删除商品
 			delProduct(index) {
 				this.maskShow = true;
 				this.modalShow = true;
 				this.index = index;
 			},
+			// 确定删除商品
 			delConfirm() {
 				this.productList.splice(this.index, 1);
 				this.checkedCount = this.productList.length;
@@ -225,6 +230,7 @@
 				this.modalShow = false;
 				this.calcTotalPrice();
 			},
+			// 取消删除
 			delCancel() {
 				this.maskShow = false;
 				this.modalShow = false;
