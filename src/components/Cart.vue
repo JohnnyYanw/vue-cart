@@ -123,14 +123,16 @@
 				checkAllFlag: false,
 				maskShow: false,
 				modalShow: false,
-				index: 0
+				index: 0,
+				// 选中的商品种类数量
+				checkedCount: 0
 			}
 		},
 		// 自定义局部过滤器
 		filters: {
 			// 商品单价格式的处理
 			formatPrice(val) {
-				return '¥' + val.toFixed(2);
+				return '¥' + val.toFixed(1);
 			}
 		},
 		mounted() {
@@ -167,28 +169,42 @@
 					this.calcTotalPrice();
 				}
 			},
+			// 选择/取消选择
 			selectProduct(item) {
 				if(typeof item.checked === 'undefined') {
 					this.$set(item, 'checked', true)
 				} else {
 					item.checked = !item.checked;
 				}
-				if(item.checked === false) {
+				if(item.checked === true) {
+					this.checkedCount += 1;
+					if(this.checkedCount === this.productList.length) {
+						this.checkAllFlag = true;
+					}
+				} else {
+					this.checkedCount -= 1;
 					this.checkAllFlag = false;
 				}
 				this.calcTotalPrice();
 			},
+			// 全选/取消全选
 			checkAll() {
 				this.checkAllFlag = !this.checkAllFlag;
 				this.productList.forEach((item, index) => {
 					if(typeof item.checked === 'undefined') {
-						this.$set(item, 'checked', this.checkAllFlag)
+						this.$set(item, 'checked', true);
 					} else {
 						item.checked = this.checkAllFlag;
+					}
+					if(item.checked === true) {
+						this.checkedCount = this.productList.length;
+					} else {
+						this.checkedCount = 0;
 					}
 				});
 				this.calcTotalPrice();
 			},
+			// 计算总价
 			calcTotalPrice() {
 				this.totalPrice = 0;
 				this.productList.forEach((item, index) => {
@@ -204,6 +220,7 @@
 			},
 			delConfirm() {
 				this.productList.splice(this.index, 1);
+				this.checkedCount = this.productList.length;
 				this.maskShow = false;
 				this.modalShow = false;
 				this.calcTotalPrice();
